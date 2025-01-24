@@ -99,9 +99,10 @@ export const deleteAdventure = async (req, res) => {
       return res.status(404).json({ message: "Adventure not found" });
     }
 
-    await adventure.remove();
+    await Adventure.deleteOne({ _id: adventureId });
     res.status(200).json({ message: "Adventure deleted successfully" });
   } catch (error) {
     res.status(500).json({ message: "Failed to delete adventure" });
+    console.error(error);
   }
 };

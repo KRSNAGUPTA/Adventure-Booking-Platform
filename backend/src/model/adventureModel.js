@@ -7,6 +7,9 @@ const adventureSchema = new mongoose.Schema({
     location: { type: String, required: true },
     date: { type: Date, required: true },
     maxParticipants: { type: Number, required: true },
+    image:{
+        type: String
+    }
 });
 
 export default mongoose.model("Adventure", adventureSchema);
